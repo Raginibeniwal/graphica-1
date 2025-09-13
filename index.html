@@ -3,105 +3,781 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>css</title>
+    <title>Ministry of Tourism - Government of India;
+     </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
+        :root {
+            --primary: #1a5276;
+            --secondary: #2e86c1;
+            --accent: #f39c12;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --success: #27ae60;
+            --danger: #e74c3c;
+        }
 
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
 
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
+        /* Header Styles */
+        header {
+            display: flex ;
+            flex-direction: column ;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1)
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            margin: 0 auto;
+            gap: 10px;
+        }
+
+        .logo img {
+            height: 50px;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-text h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .logo-text p {
+            font-size: 0.8rem;
+            opacity: 0.9;
+        }
+
+        .header-tagline {
+            text-align: center;
+            font-style: italic;
+            padding: 5px 0;
+            font-size: 1.1rem;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            position: relative;
+        }
+
+        .nav-links a {
+            display: block;
+            color: var(--dark);
+            text-decoration: none;
+            padding: 15px 20px;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .nav-links a:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .login-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn {
+            padding: 8px 15px;
+            border-radius: 4px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--secondary);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 1px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: url('https://images.unsplash.com/photo-1524492412937-b28074a5d7da?ixlib=rb-4.0.3') no-repeat center center/cover;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            color: white;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-content {
+            position: relative;
+            max-width: 600px;
+            padding: 30px;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+        }
+
+        .hero-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 60px 0;
+            background-color: white;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--primary);
+            font-size: 2rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background-color: var(--light);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-img {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .feature-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .feature-card:hover .feature-img img {
+            transform: scale(1.1);
+        }
+
+        .feature-content {
+            padding: 20px;
+        }
+
+        .feature-content h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        /* App Integration */
+        .app-integration {
+            padding: 60px 0;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+        }
+
+        .app-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .app-text {
+            flex: 1;
+        }
+
+        .app-image {
+            flex: 1;
+            text-align: center;
+        }
+
+        .app-image img {
+            max-width: 300px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Login Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: white;
+            border-radius: 10px;
+            width: 400px;
+            max-width: 90%;
+            padding: 30px;
+            position: relative;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #999;
+        }
+
+        .close-modal:hover {
+            color: var(--danger);
+        }
+
+        .modal-title {
+            text-align: center;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .form-options {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+        }
+
+        .form-options a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .form-options a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 40px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--accent);
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-column a:hover {
+            color: white;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .social-icons a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: all 0.3s;
+        }
+
+        .social-icons a:hover {
+            background-color: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #999;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+            }
+
+            .nav-links {
+                width: 100%;
+                flex-direction: column;
+            }
+
+            .login-buttons {
+                margin-top: 15px;
+                width: 100%;
+                justify-content: center;
+            }
+
+            .app-content {
+                flex-direction: column;
+            }
+
+            .hero-content h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-top">
+                <div class="logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/41/Flag_of_India.svg/125px-Flag_of_India.svg.png" alt="Emblem of India">
+                    <div class="logo-text">
+                        <h1>MINISTRY OF TOURISM</h1>
+                        <p>Government of India</p>
+                    </div>
+                </div>
+            </div>
+            <div class="header-tagline">
+                <p>Timeless Heritage. Endless Journeys</p>
+            </div>
+        </div>
+    </header>
 
-  <h1>ASSIGNMENT 02</h1><hr>
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-container">
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Destinations</a></li>
+                <li><a href="#">Experiences</a></li>
+                <li><a href="#">Travel Guides</a></li>
+                <li><a href="#">Plan Your Trip</a></li>
+                <li><a href="#">Safety & Guidelines</a></li>
+            </ul>
+            <div class="login-buttons">
+                <button class="btn btn-primary" onclick="openLoginModal()">OFFICE LOGIN</button>
+                <button class="btn btn-outline" onclick="openLoginModal()">TOURIST LOGIN</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Discover Incredible India</h2>
+                <p>Explore the rich cultural heritage, diverse landscapes, and unforgettable experiences that India has to offer.</p>
+                <button class="btn btn-primary">Explore Destinations</button>
+            </div>
+        </div>
+    </section>
+
+     <!-- Search Section -->
+<section id="search">
+    <title>Tourist Search Engine</title>
+    
   
-  <!--<h1>hello worllo world oss</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur cumque recusandae cupiditate
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam quibusdam distinctio 
-        magnam molestiae 
-        facere aspernatur magni at ab pariatur minus.
-         Dolore at nihil excepturi! Possimus deleniti assumenda saepe qui quibusdam.</p>
-         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque illum minima perspiciatis necessitatibus autem vel saepe eum vero esse consequatur placeat, excepturi dicta voluptates doloribus voluptatum. Unde facere reiciendis esse enim vel quos? Totam sunt animi temporibus, deleniti numquam cupiditate quos placeat unde doloremque quam rerum dolorem magni et error, nihil culpa quas vero sapiente maiores fuga pariatur ipsam nemo quo laboriosam! Sed temporibus tempore itaque ipsa labore dolorum nesciunt?</p>
-         <img src="sardar-kamran-khan-zo_udYMcaVc-unsplash.jpg" height="800" width="1000"alt="mountains">
-         <img src="sardar-kamran-khan-RsCvxI9h2Ew-unsplash.jpg" height="800" width="500" alt="trees">
-         <img src="https://media.istockphoto.com/id/543217268/photo/starry-night.webp?a=1&b=1&s=612x612&w=0&k=20&c=My53wRegL12zxi9TjwYSPDSzFUaV8x-fHQURO3p8l4I=" height="500" width="500" alt="tracking">
+  <h2>Find Your Destination</h2>
+   <form action=""></form> 
+   <input type="text" placeholder="Search city..." list="cities">
+    <datalist id="cities">
+      <option value="Jaipur - Hawa Mahal">
+  <option value="Jaipur - Amer Fort">
+  <option value="Jaipur - City Palace">
+  <option value="Udaipur - Lake Pichola">
+  <option value="Udaipur - City Palace">
+  <option value="Udaipur - Jag Mandir">
+  <option value="Jaisalmer - Jaisalmer Fort">
+  <option value="Jaisalmer - Sam Sand Dunes">
+  <option value="Pushkar - Brahma Temple">
+  <option value="Pushkar - Pushkar Lake">
+  <option value="Kota - Chambal Gardens">
+  <option value="Mount Abu - Dilwara Temples">
+  <option value="Bikaner - Junagarh Fort">
+  <option value="Chittorgarh - Chittorgarh Fort">
 
-         <ul type="square">
-          <li>coffe</li>
-          <li>milk</li>
-          <li>tea</li>
-         </ul>
+  <!-- North India -->
+  <option value="Agra - Taj Mahal">
+  <option value="Agra - Agra Fort">
+  <option value="Delhi - India Gate">
+  <option value="Delhi - Qutub Minar">
+  <option value="Delhi - Lotus Temple">
+  <option value="Varanasi - Kashi Vishwanath Temple">
+  <option value="Varanasi - Dashashwamedh Ghat">
+  <option value="Amritsar - Golden Temple">
+  <option value="Amritsar - Jallianwala Bagh">
+  <option value="Shimla - Mall Road">
+  <option value="Shimla - Jakhoo Temple">
+  <option value="Manali - Solang Valley">
+  <option value="Manali - Rohtang Pass">
+  <option value="Rishikesh - Laxman Jhula">
+  <option value="Rishikesh - Triveni Ghat">
 
-         <ol type="a">
-          <li>coffee</li>
-          <li>i dont know</li>
-          <li>bhaago bhaago</li>
-         </ol>
+  <!-- West India -->
+  <option value="Mumbai - Gateway of India">
+  <option value="Mumbai - Marine Drive">
+  <option value="Goa - Baga Beach">
+  <option value="Goa - Anjuna Beach">
+  <option value="Goa - Basilica of Bom Jesus">
+  <option value="Pune - Shaniwar Wada">
+  <option value="Ahmedabad - Sabarmati Ashram">
+  <option value="Udaipur - Fateh Sagar Lake">
 
-         <ol>
-          <li>fruit</li>
-          <ul>
-            <li>january</li>
-            <li>febuary</li>
-            <li>march</li>
-          </ul>
-         </ol>
+  <!-- South India -->
+  <option value="Bangalore - Lalbagh Botanical Garden">
+  <option value="Bangalore - Bangalore Palace">
+  <option value="Mysore - Mysore Palace">
+  <option value="Mysore - Chamundi Hill">
+  <option value="Hyderabad - Charminar">
+  <option value="Hyderabad - Golconda Fort">
+  <option value="Chennai - Marina Beach">
+  <option value="Chennai - Kapaleeshwarar Temple">
+  <option value="Kerala - Backwaters of Alleppey">
+  <option value="Kerala - Munnar Tea Gardens">
+  <option value="Kochi - Fort Kochi">
+  <option value="Thiruvananthapuram - Kovalam Beach">
 
-         <a href="https://youtube.com/shorts/pracm1xsMDo?si=RB5xrU0L3qS8aTW8">shorts</a> 
-         
+  <!-- East India -->
+  <option value="Kolkata - Victoria Memorial">
+  <option value="Kolkata - Howrah Bridge">
+  <option value="Darjeeling - Tiger Hill">
+  <option value="Darjeeling - Batasia Loop">
+  <option value="Puri - Jagannath Temple">
+  <option value="Puri - Puri Beach">
+  <option value="Bhubaneswar - Lingaraj Temple">
+  <option value="Sundarbans - Mangrove Forest">
+  <option value="Gangtok - Rumtek Monastery">
+
+  <!-- Northeast India -->
+  <option value="Shillong - Elephant Falls">
+  <option value="Shillong - Shillong Peak">
+  <option value="Kaziranga - National Park">
+  <option value="Tawang - Tawang Monastery">
+  <option value="Imphal - Kangla Fort">
+  <option value="Guwahati - Kamakhya Temple">
+  <option value="Meghalaya - Mawlynnong Village">
+
+  <!-- Additional Popular Destinations -->
+  <option value="Ranthambore - Ranthambore National Park">
+  <option value="Sariska - Sariska Tiger Reserve">
+  <option value="Mount Abu - Nakki Lake">
+  <option value="Ajmer - Ajmer Sharif Dargah">
+  <option value="Jodhpur - Mehrangarh Fort">
+  <option value="Jodhpur - Jaswant Thada">
+  <option value="Chandigarh - Rock Garden">
+  <option value="Chandigarh - Sukhna Lake">
+  <option value="Matheran - Panorama Point">
+  <option value="Alleppey - Houseboats">
+  <option value="Coorg - Abbey Falls">
+  <option value="Coorg - Raja's Seat">
+  <option value="Ooty - Botanical Garden">
+  <option value="Ooty - Ooty Lake">
+  <option value="Kodaikanal - Coaker's Walk">
+  <option value="Kodaikanal - Kodai Lake">
+  <option value="Mahabalipuram - Shore Temple">
+  <option value="Mahabalipuram - Five Rathas">
+  <option value="Hampi - Virupaksha Temple">
+  <option value="Hampi - Vittala Temple">
+  <option value="Rishikesh - Neelkanth Mahadev Temple">
+  <option value="Haridwar - Har Ki Pauri">
+  <option value="Nainital - Naini Lake">
+  <option value="Nainital - Naina Devi Temple">
+  <option value="Mussoorie - Kempty Falls">
+  <option value="Mussoorie - Gun Hill">
+  <option value="Agra - Fatehpur Sikri">
+  <option value="Mathura - Krishna Janmabhoomi">
+  <option value="Vrindavan - Banke Bihari Temple">
+  <option value="Lucknow - Bara Imambara">
+  <option value="Lucknow - Rumi Darwaza">
+  <option value="Jaipur - Jal Mahal">
+  <option value="Jaisalmer - Patwon Ki Haveli">
+  <option value="Bikaner - Karni Mata Temple">
+  <option value="Chittorgarh - Vijay Stambh">
+  <option value="Mount Abu - Sunset Point">
+    </datalist>
+    <button type="submit">Go</button>
+  </form>
+</section>
+<style>
+  /* Search Section Styling */
+  #search {
+    background: linear-gradient(135deg, #f9f9f9, #eaf6f6);
+    padding: 50px 0;
+    text-align: center;
+  }
+
+  #search h2 {
+    font-size: 2rem;
+    color: #2E86C1;
+    margin-bottom: 25px;
+    font-weight: bold;
+  }
+
+  #search form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+  }
+
+  #search input[type="text"] {
+    width: 60%;
+    padding: 14px;
+    border-radius: 8px;
+    border: 2px solid #2E86C1;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s;
+  }
+
+  #search input[type="text"]:focus {
+    border-color: #45B39D;
+    box-shadow: 0 0 10px rgba(46, 134, 193, 0.3);
+  }
+
+  #search button {
+    padding: 14px 22px;
+    border: none;
+    border-radius: 8px;
+    background: #2E86C1;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  #search button:hover {
+    background: #45B39D;
+    transform: scale(1.05);
+  }
+</style>
 
 
-     <h3>hello world oss</h3>
-    <h4>hello world oss</h4>
-    <h5>hello world oss</h5>
-    <h6>hello world oss</h6>
-    <h7>hello world oss</h7>
-    ld oss</h1>
-  <h2>he -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Key Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-img">
+                        <img src="https://images.unsplash.com/photo-1505765050516-f72dcac9c60e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Location Awareness">
+                    </div>
+                    <div class="feature-content">
+                        <h3>Location Awareness</h3>
+                        <p>Get notified when you're near tourist attractions with detailed information about the place.</p>
+                    </div>
+                </div>
 
+                <div class="feature-card">
+                    <div class="feature-img">
+                        <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Place Information">
+                    </div>
+                    <div class="feature-content">
+                        <h3>Place Information & Visuals</h3>
+                        <p>Explore detailed information with photos and descriptions of destinations before visiting.</p>
+                    </div>
+                </div>
 
-<label for="">Enter your name:</label>
-  <input type="text" placeholder="username"><br><br>
-  <label for="">Enter your password:</label>
-  <input type="password" placeholder="password"><br><hr>
+                <div class="feature-card">
+                    <div class="feature-img">
+                        <a href="emergency.html">
+                        <img src="https://media.istockphoto.com/id/583981586/vector/medical-police-and-fire-service.jpg?s=612x612&w=0&k=20&c=448meJqfj_UKa82WfWPF3zztWqi45Pp5RY5_7aaSAag=" alt="Safety Features">
+                   </a> </div>
+                    <div class="feature-content">
+                        <h3>Safety & Emergency Support</h3>
+                        <p>Locate nearby police stations, hospitals, and essential facilities for your safety.</p>
+                    </div>
+                </div>
 
-   
-  
-  
-  <b><label for="">Gender:</label>
-  </b><br><br>
-  
-  <label for="">
-    <input type="radio" name="gender" id="">Male</label><br>
-  <label for="">
-    <input type="radio" name="gender" id="">female</label><br><hr>
+                <div class="feature-card">
+                    <div class="feature-img">
+                        <a href="hidden2.html">
+                        <img src="https://images.unsplash.com/photo-1451337516015-6b6e9a44a8a3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Hidden Gems">
+                    </a>
+                </div>
+                    <div class="feature-content">
+                        <h3>Hidden Gems & Recommendations</h3>
+                        <p>Discover less-known destinations recommended by the government for unique experiences.</p>
+                    </div>
+                </div>
 
-  <b><label for="">Branch:</label></b><br>
-  <select name="branch" id=""><br><hr>
-    <option value="information technology">information technology</option><br><hr>
+                <div class="feature-card">
+                    <div class="feature-img">
+                        <img src="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Data Insights">
+                    </div>
+                    <div class="feature-content">
+                        <h3>Data-Driven Government Insights</h3>
+                        <p>Help improve tourism infrastructure by sharing visit data with government authorities.</p>
+                    </div>
+                </div>
 
-  </select><br><hr>
+                <div class="feature-card">
+                    <div class="feature-img">
+                        <a href="feedback.html">
+                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Journey Experiences">
+                    </a>                    </div>
+                    <div class="feature-content">
+                        <h3>Tell Us How Was Your Journey</h3>
+                        <p>Earn credits for uploading pictures and sharing your travel experiences on the platform.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <b><label for="">Hoobies</label><br></b><br>
-  <input type="checkbox">playing games</label><br>
-  <label for=""><input type="checkbox">bakaiti</label><br>
-  <label for=""><input type="checkbox">listening music</label><br>
-  <label for=""><input type="checkbox">watching movies</label><br><hr>
-  
+    <!-- App Integration Section -->
+    <section class="app-integration">
+        <div class="container">
+            <div class="app-content">
+                <div class="app-text">
+                    <h2>Integrated Travel Services</h2>
+                    <p>We've partnered with Sahkar App to provide seamless transportation services for tourists. Estimate fair travel costs and book rides conveniently through our platform.</p>
+                    <p>Enjoy government-backed ride services similar to Ola and Uber, with verified drivers and transparent pricing.</p>
+                    <button class="btn btn-primary">Book a Ride with Sahkar</button>
+                </div>
+                <div class="app-image">
+                    <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Sahkar App">
+                </div>
+            </div>
+        </div>
+    </section>
 
-
-
-<!--<form action="raginibeniwal7@gmail.com" method="post">
-  <label for="name">name</label>-->
-  <textarea name="write about the OSS club" id="write about the oss club" cols="30" rows="8">write about the oss club</textarea><br><hr>
-
-
-  
-
-
-
-<button type="submit">submit</button><br>
-
-
-
-
-</body>
-</html>
+    <!-- Login Modal -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeLoginModal
