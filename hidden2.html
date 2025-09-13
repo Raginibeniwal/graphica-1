@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hidden Gems of India</title>
+<link rel="stylesheet" href="../css/style.css">
+<style>
+  :root {
+      --primary: #1a5276;
+      --secondary: #2e86c1;
+  }
+
+  body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f5f5f5;
+  }
+
+  .hero-hidden {
+      background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1000&q=80') no-repeat center center/cover;
+      height: 400px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      position: relative;
+  }
+
+  .hero-hidden::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.5);
+  }
+
+  .hero-hidden h1 {
+      position: relative;
+      font-size: 3rem;
+      z-index: 1;
+      text-align: center;
+  }
+
+  .gems-section {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+      background: #fff;
+  }
+
+  .section-title {
+      text-align: center;
+      font-style: italic;
+      margin-bottom: 40px;
+      color: var(--primary);
+      font-size: 2rem;
+  }
+
+  .gems-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+  }
+
+  .gem-card {
+      background: #f9f9f9;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+  }
+
+  .gem-card:hover {
+      transform: translateY(-5px);
+  }
+
+  .gem-card img {
+      width: 100%;
+      height: 200px; /* Fixed height for all images */
+      object-fit: cover; /* Ensure images fit nicely */
+  }
+
+  .gem-content {
+      padding: 15px;
+  }
+
+  .gem-content h3 {
+      margin-bottom: 8px;
+      color: var(--primary);
+  }
+
+  .gem-content p {
+      font-size: 0.95rem;
+      color: #555;
+  }
+
+  .back-btn {
+      display: inline-block;
+      margin: 40px auto 0;
+      padding: 10px 20px;
+      background: var(--primary);
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: background 0.3s;
+  }
+
+  .back-btn:hover {
+      background: var(--secondary);
+  }
+
+  @media (max-width:768px){
+      .hero-hidden h1{
+          font-size:2rem;
+          padding:0 20px;
+      }
+  }
+</style>
+</head>
+<body>
+
+<!-- Hero -->
+<section class="hero-hidden">
+  <h1>Hidden Gems of India</h1>
+</section>
+
+<!-- Content -->
+<section class="gems-section">
+  <h2 class="section-title">Discover Untouched Beauty</h2>
+  <p style="text-align:center; max-width:800px; margin: 0 auto 40px;">
+    Beyond the famous landmarks, India hides countless unexplored destinations waiting to be discovered. 
+    These hidden gems offer peace, beauty, and authentic cultural experiences away from the crowds.
+  </p>
+
+  <div class="gems-grid">
+    <!-- All gem cards with same structure -->
+    <div class="gem-card">
+      <img src="https://media.istockphoto.com/id/1178712785/photo/view-from-dura-hidden-paradise-ziro.jpg?s=612x612&w=0&k=20&c=PbWUrAVgmNcj9y5wVXDl8b7rhn_ITnI5z4ceQQpv82o=" alt="Ziro Valley">
+      <div class="gem-content">
+        <h3>Ziro Valley, Arunachal Pradesh</h3>
+        <p>A paradise for nature lovers, famous for its lush paddy fields, pine hills, and the Ziro Music Festival.</p>
+      </div>
+    </div>
+
+    <div class="gem-card">
+      <img src="https://media.istockphoto.com/id/1220650010/photo/beautiful-landscape-of-the-river-brahmaputra-majuli-island.jpg?s=612x612&w=0&k=20&c=ItyGKmuro6xiHBwmWs9nqKUbAjF_OHvtdJQ1ErBdBdo=" alt="Majuli Island">
+      <div class="gem-content">
+        <h3>Majuli Island, Assam</h3>
+        <p>World’s largest river island, known for its satras (monasteries), unique culture, and breathtaking sunsets.</p>
+      </div>
+    </div>
+
+    <div class="gem-card">
+      <img src="https://media.istockphoto.com/id/1366818459/photo/mountain-chopta-uttarkhand-india.jpg?s=612x612&w=0&k=20&c=133m_VWvTNwUKiKqFb6jG3t5YiEalCfcHWRXYN7Alew=" alt="Chopta Uttarakhand">
+      <div class="gem-content">
+        <h3>Chopta, Uttarakhand</h3>
+        <p>Called the "Mini Switzerland of India", Chopta is a base for treks with mesmerizing views of the Himalayas.</p>
+      </div>
+    </div>
+
+    <div class="gem-card">
+      <img src="https://media.istockphoto.com/id/910430170/photo/tawang-arunachal-pradesh.jpg?s=612x612&w=0&k=20&c=MKKYsHH_6JRMYROO2bHIsQAW9XoSnl-9nkRGOFgAg0M=" alt="Tawang">
+      <div class="gem-content">
+        <h3>Tawang, Arunachal Pradesh</h3>
+        <p>Home to the famous Tawang Monastery and spectacular mountain landscapes, rich in Buddhist culture.</p>
+      </div>
+    </div>
+
+    <div class="gem-card">
+      <img src="https://media.istockphoto.com/id/1486998198/photo/prakasheswar-mahadev-temple-temple-most-famous-temples-dedicated-to-lord-shiva-in-india.jpg?s=612x612&w=0&k=20&c=KEa-XtupXobZHfejP6xQa6-MixV2ANDIgtig48hcB_k=" alt="Kanatal">
+      <div class="gem-content">
+        <h3>Kanatal, Uttarakhand</h3>
+        <p>A tiny, crowd-free Himalayan village perfect for camping under starry skies.</p>
+      </div>
+    </div>
+
+    <div class="gem-card">
+      <img src="https://media.istockphoto.com/id/1373270564/photo/davar-valley-with-river-and-houses-gurez-kashmir-india.jpg?s=1024x1024&w=is&k=20&c=L9xke41oGrvhzqB7HAlvjQcO4Cqf0f__AKtZ2UEXT_s=" alt="Gurez Valley">
+      <div class="gem-content">
+        <h3>Gurez Valley, Kashmir</h3>
+        <p>A breathtaking valley near the Line of Control, rich in natural beauty and cultural experiences.</p>
+      </div>
+    </div>
+
+    <div class="gem-card">
+      <img src="https://media.istockphoto.com/id/692201504/photo/kala-pokhri-or-the-black-water-pond.jpg?s=612x612&w=0&k=20&c=P361MAtbm5wdIhEOeR2hWJC54wmQJpT-wNNGInF1jCI=" alt="Sandakphu">
+      <div class="gem-content">
+        <h3>Sandakphu, West Bengal</h3>
+        <p>Offers stunning panoramic views of four of the world's five tallest peaks.</p>
+      </div>
+    </div>
+
+    <div class="gem-card">
+      <img src="https://media.istockphoto.com/id/2191146522/photo/the-splendid-stepwell-of-patan-rani-ki-vav.jpg?s=612x612&w=0&k=20&c=tETAmC0_H5a6AEgrWzmTIW-_JYgdK15U2tm3J0WrpB4=" alt="Patan & Modhera">
+      <div class="gem-content">
+        <h3>Patan & Modhera, Gujarat</h3>
+        <p>Home to the stunning UNESCO-listed Rani ki Vav stepwell and the almost-forgotten Sun Temple of Modhera.</p>
+      </div>
+    </div>
+  </div>
+
+  <div style="text-align:center;">
+    <a href="../index4.html" class="back-btn">← Back to Home</a>
+  </div>
+</section>
+
+</body>
+</html>

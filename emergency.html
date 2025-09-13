@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tourist Safety & Emergency</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: #f4f8fb;
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(135deg, #1a5276, #2e86c1);
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+    }
+
+    header h1 {
+      font-size: 2rem;
+      margin-bottom: 8px;
+    }
+
+    header p {
+      font-size: 1rem;
+      opacity: 0.9;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 40px;
+      color: #1a5276;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .service-card {
+      background: white;
+      border-radius: 15px;
+      padding: 30px 20px;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+    }
+
+    .service-card i {
+      font-size: 3rem;
+      color: #2e86c1;
+      margin-bottom: 20px;
+    }
+
+    .service-card h3 {
+      margin-bottom: 10px;
+      font-size: 1.3rem;
+      color: #1a5276;
+    }
+
+    .service-card p {
+      font-size: 0.95rem;
+      margin-bottom: 20px;
+      color: #555;
+    }
+
+    .call-btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #1a5276;
+      color: white;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .call-btn:hover {
+      background: #f39c12;
+    }
+
+    /* Emergency banner */
+    .emergency-banner {
+      background: #e74c3c;
+      color: white;
+      padding: 15px;
+      text-align: center;
+      margin: 50px 0 0;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    footer {
+      background: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>Tourist Safety & Emergency</h1>
+    <p>Your safety is our priority – Always here to help you</p>
+  </header>
+
+  <!-- Main Services -->
+  <section class="container">
+    <h2 class="section-title">Essential Services for Tourists</h2>
+    <div class="services-grid">
+      <!-- Police -->
+      <div class="service-card">
+        <i class="fas fa-shield-alt"></i>
+        <h3>Police Services</h3>
+        <p>24x7 assistance to ensure your safety and help you in case of any emergencies.</p>
+        <a href="tel:100" class="call-btn">Call Police (100)</a>
+      </div>
+
+      <!-- Ambulance -->
+      <div class="service-card">
+        <i class="fas fa-ambulance"></i>
+        <h3>Ambulance</h3>
+        <p>Quick medical emergency response with trusted ambulance services across India.</p>
+        <a href="tel:108" class="call-btn">Call Ambulance (108)</a>
+      </div>
+
+      <!-- Fire Brigade -->
+      <div class="service-card">
+        <i class="fas fa-fire-extinguisher"></i>
+        <h3>Fire & Rescue</h3>
+        <p>Fire safety and rescue operations to protect tourists during emergencies.</p>
+        <a href="tel:101" class="call-btn">Call Fire (101)</a>
+      </div>
+
+      <!-- Helpline -->
+      <div class="service-card">
+        <i class="fas fa-phone-volume"></i>
+        <h3>Tourist Helpline</h3>
+        <p>Dedicated helpline for tourists to assist with queries, safety, and emergencies.</p>
+        <a href="tel:1363" class="call-btn">Tourist Helpline (1363)</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Emergency banner -->
+  <div class="emergency-banner">
+    🚨 For any immediate danger, dial the National Emergency Number: <strong>112</strong>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Ministry of Tourism, Government of India | Stay Safe, Travel Safe
+  </footer>
+
+</body>
+</html>
